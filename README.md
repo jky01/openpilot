@@ -71,6 +71,32 @@ openpilot is developed by [comma](https://comma.ai/) and by users like you. We w
 
 Want to get paid to work on openpilot? [comma is hiring](https://comma.ai/jobs#open-positions) and offers lots of [bounties](https://comma.ai/bounties) for external contributors.
 
+在 Ubuntu 24.04.2 LTS 與 RTX 2070 上啟動 openpilot
+------
+1. 安裝 NVIDIA 顯示卡驅動與 OpenCL/CUDA（若尚未安裝）。
+2. 下載原始碼並進入目錄：
+   ```bash
+   git clone https://github.com/commaai/openpilot.git
+   cd openpilot
+   ```
+3. 安裝系統與 Python 依賴：
+   ```bash
+   ./tools/op.sh setup
+   ```
+4. 建置 openpilot：
+   ```bash
+   ./tools/op.sh build
+   ```
+5. 啟用虛擬環境：
+   ```bash
+   ./tools/op.sh venv
+   ```
+6. 啟動模擬器或重播資料：
+   ```bash
+   ./tools/op.sh sim        # 啟動模擬器
+   ./tools/op.sh replay 路徑 # 播放既有駕駛資料
+   ```
+
 Safety and Testing
 ----
 
